@@ -1,0 +1,91 @@
+.nav {
+    background: rgba(20, 20, 20, 0.5);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    &.color {
+        background: black;
+    }
+    &__close {
+        display: none;
+        width: 40px;
+        height: 40px;
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+        @include media(800) {
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            z-index: 1000;
+        }
+    }
+    &__menu {
+        width: 40px;
+        height: 40px;
+        display: none;
+        @include media(800){
+            display: flex;
+        }
+        & img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 95px;
+        &-list {
+            display: flex;
+            column-gap: 30px;
+            row-gap: 30px;
+            @include media(800){
+                position: fixed;
+                inset: 0;
+                background: #141414;
+                flex-direction: column;
+                padding: 30px 0;
+                transform: translateX(-100%);
+                transition: 200ms;
+                &.active {
+                    transform: translateX(0);
+                }
+            }
+            &-link {
+                font-size: 18px;
+                line-height: 21px;
+                font-weight: 700;
+                padding: 34px 0;
+                position: relative;
+                color: rgba(255, 255, 255, 0.6);
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                &.router-link-exact-active {
+                    color: white;
+                }
+                &::after {
+                    content: '';
+                    background: #149A03;
+                    width: 0px;
+                    height: 0px;
+                    border-radius: 50%;
+                    position: absolute;
+                    bottom: 10px;
+                    transition: 100ms;
+                }
+                &.router-link-exact-active::after {
+                    width: 15px;
+                    height: 15px;
+                }
+            }
+        }
+    }
+}

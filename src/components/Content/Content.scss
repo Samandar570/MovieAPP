@@ -1,0 +1,42 @@
+.main__content {
+    margin-top: 150px;
+    padding-bottom: 90px;
+    &-title {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 21px;
+        color: #fff;
+        margin-left: 20px;
+    }
+    &-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+        gap: 25px;
+        grid-auto-rows: 470px;
+        margin-top: 50px;
+        &-item {
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid #000;
+            overflow: hidden;
+            &-img {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 100%;
+                z-index: -2;
+                object-fit: cover;
+            }
+            &-name {
+                font-size: 16px;
+                line-height: 19px;
+                color: #fff;
+                position: absolute;
+                bottom: 15px;
+                width: 100%;
+                text-align: center;
+            }
+        }
+    }
+}
